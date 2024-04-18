@@ -68,7 +68,7 @@ const Footer = () => {
 						<ul>
 							{!isLoading && (
 								<>
-									{data.map(
+									{data.slice(0, data.length - 1).map(
 										(
 											item: {
 												id:
