@@ -1,5 +1,5 @@
 import axios from "axios";
-const API_URL = "https://xbn.6a5.myftpupload.com/wp-json/wp/v2/";
+const API_URL = "https://55u.598.myftpupload.com/wp-json/wp/v2/";
 
 const getCategories = async () => {
 	return axios.get(API_URL + "categories", {});

@@ -41,7 +41,6 @@ const CategoriesShowcase = () => {
 						) => {
 							return (
 								<div key={"categoryshowcase_" + index}>
-									
 									<div className="container">
 										<BreadHeading
 											title={item.name}

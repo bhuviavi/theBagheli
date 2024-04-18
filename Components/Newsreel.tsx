@@ -84,7 +84,6 @@ const Newsreel = (props: { category: any }) => {
 													  >
 													| React.ReactFragment
 													| React.ReactPortal
-													
 													| null
 													| undefined;
 											};
