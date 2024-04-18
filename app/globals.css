@@ -71,7 +71,10 @@ html {
 .footerColum {
 	display: flex;
 	flex-direction: column;
-} .categoryCol li{padding: 9px;}
+}
+.categoryCol li {
+	padding: 9px;
+}
 .footer ul li {
 	color: rgb(195, 195, 195);
 	list-style: none;
@@ -81,7 +84,6 @@ html {
 	display: flex;
 	flex-wrap: wrap;
 }
-
 
 a {
 	color: black;
@@ -361,6 +363,10 @@ iframe {
 @media screen and (max-width: 768px) {
 	.mobileOnly {
 		display: block;
+	}
+
+	.logo img {
+		height: 40px;
 	}
 	.col {
 		width: 100%;
