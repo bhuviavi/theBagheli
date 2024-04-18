@@ -250,6 +250,11 @@ a {
 	padding: 8px;
 }
 
+.SquareContaner {
+	display: flex;
+	flex-wrap: wrap;
+}
+
 .post_page {
 	display: flex;
 	flex-direction: row;
