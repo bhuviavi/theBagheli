@@ -110,6 +110,7 @@ const Footer = () => {
 							<li>
 								<img
 									src="/squareLogo.png"
+									className="pcOnly"
 									height={80}
 									alt="logo"
 								/>

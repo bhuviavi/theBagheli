@@ -365,6 +365,10 @@ iframe {
 		display: block;
 	}
 
+	.pcOnly {
+		display: none;
+	}
+
 	.logo img {
 		height: 40px;
 		padding-left: 20px;
