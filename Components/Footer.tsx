@@ -87,7 +87,6 @@ const Footer = () => {
 													  >
 													| React.ReactFragment
 													| React.ReactPortal
-													| React.PromiseLikeOfReactNode
 													| null
 													| undefined;
 											},
