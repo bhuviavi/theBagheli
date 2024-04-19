@@ -12,13 +12,19 @@ import Link from "next/link";
 const Newsreel = (props: { category: any }) => {
 	const { data, error, isLoading } = useSWR(
 		apiService.API_URL +
-			`posts?per_page=4&category=${props.category}&_fields[]=title&_fields[]=slug&_fields[]=featured_media&_fields[]=featured_media_src_url&_fields[]=excerpt&_fields[]=date`,
+			`posts?per_page=4&categories=${props.category}&_fields[]=title&_fields[]=slug&_fields[]=featured_media&_fields[]=featured_media_src_url&_fields[]=excerpt&_fields[]=date`,
 		fetcher
 	);
+	const [empty, setEmpty] = React.useState(false);
 
 	useEffect(() => {
 		console.log(data);
 		console.log(props.category);
+		if (!isLoading) {
+			if (data.length == 0) {
+				setEmpty(true);
+			}
+		}
 	}, [data]);
 
 	var TopFour1 = [
@@ -65,59 +71,80 @@ const Newsreel = (props: { category: any }) => {
 							<LoadingPulse />
 						) : (
 							<>
-								{data.map(
-									(
-										item: {
-											slug: string;
-											featured_media_src_url:
-												| string
-												| undefined;
-											title: {
-												rendered:
-													| string
-													| number
-													| boolean
-													| React.ReactElement<
-															any,
+								{empty ? (
+									<LoadingPulse />
+								) : (
+									<>
+										{data.map(
+											(
+												item: {
+													slug: string;
+													featured_media_src_url:
+														| string
+														| undefined;
+													title: {
+														rendered:
 															| string
-															| React.JSXElementConstructor<any>
-													  >
-													| React.ReactFragment
-													| React.ReactPortal
+															| number
+															| boolean
+															| React.ReactElement<
+																	any,
+																	| string
+																	| React.JSXElementConstructor<any>
+															  >
+															| React.ReactFragment
+															| React.ReactPortal
+															| null
+															| undefined;
+													};
+													date:
+														| string
+														| number
+														| Date;
+												},
+												index:
+													| React.Key
 													| null
-													| undefined;
-											};
-											date: string | number | Date;
-										},
-										index: React.Key | null | undefined
-									) => {
-										return (
-											<div key={"newsreel_keyt" + index}>
-												<Link
-													href={"/post/" + item.slug}
-												>
+													| undefined
+											) => {
+												return (
 													<div
-														className="squareCard"
-														key={index}
+														key={
+															"newsreel_keyt" +
+															index
+														}
 													>
-														<div className="squareCard_thumb">
-															<img
-																src={
-																	item.featured_media_src_url
-																}
-															/>
-														</div>
-														<div className="squareCard_title">
-															{
-																item.title
-																	.rendered
+														<Link
+															href={
+																"/post/" +
+																item.slug
 															}
-														</div>
+														>
+															<div
+																className="squareCard"
+																key={index}
+															>
+																<div className="squareCard_thumb">
+																	<img
+																		src={
+																			item.featured_media_src_url
+																		}
+																	/>
+																</div>
+																<div className="squareCard_title">
+																	{
+																		item
+																			.title
+																			.rendered
+																	}
+																</div>
+															</div>
+														</Link>
 													</div>
-												</Link>
-											</div>
-										);
-									}
+												);
+											}
+										)}
+									</>
 								)}
 							</>
 						)}
