@@ -82,7 +82,7 @@ export default function Home() {
 							</div>
 							<div className="post_meta_item">
 								<a
-									href="Instagram.com/thebagheli"
+									href="https://Instagram.com/thebagheli"
 									target="_blank"
 								>
 									<img
