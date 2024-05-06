@@ -4,10 +4,13 @@
 	--bg-color: rgb(246, 246, 246);
 }
 
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+
 * {
 	box-sizing: border-box;
 	padding: 0;
 	margin: 0;
+	font-family: "Inter", sans-serif;
 }
 
 .AD_BOX {
@@ -34,6 +37,7 @@ html {
 	max-width: 63rem;
 	margin: auto;
 	padding: 6px;
+
 	padding-left: 0;
 
 	display: flex;
@@ -437,4 +441,81 @@ iframe {
 	.squareCard_title {
 		padding-left: 20px;
 	}
+}
+
+.pagination_wrap {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.page-numbers {
+	padding: 10px;
+	margin: 10px;
+	border: 1px solid rgb(219, 219, 219);
+	border-radius: 5px;
+	font-size: smaller;
+}
+
+.currentPage {
+	background-color: var(--primary-color);
+	color: white;
+	font-size: medium;
+}
+
+h1,
+h1 > * {
+	font-size: 2.5rem !important;
+	font-weight: bold !important;
+}
+h2,
+h2 > * {
+	font-size: 2rem !important;
+	font-weight: bold !important;
+}
+h3,
+h3 > * {
+	font-size: 1.5rem !important;
+	font-weight: bold !important;
+}
+h4,
+h4 > * {
+	font-size: 1.25rem !important;
+	font-weight: bold !important;
+}
+h5,
+h5 > * {
+	font-size: 1rem !important;
+	font-weight: bold !important;
+}
+h6,
+h6 > * {
+	font-size: 0.875rem !important;
+	font-weight: bold !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+.post_body ul,
+ol {
+	list-style: disc;
+	padding-left: 20px;
+	margin-bottom: 8px;
+}
+.post_body p {
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.post_body div {
+	margin-top: 10px;
+	margin-bottom: 10px;
 }

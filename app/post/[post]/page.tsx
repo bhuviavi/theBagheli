@@ -46,8 +46,13 @@ export default function Home() {
 					href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
 					integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
 				/>
+				<link
+					rel="stylesheet"
+					href="https://cdnjs.cloudflare.com/ajax/libs/tinymce/7.0.1/skins/content/default/content.min.css"
+					integrity="sha512-AQlh8pNI8GdH0sbUsSACzz37sCq68PohXzXYt/YOJt581nIiqnMjF4YM9lp5YVBMLR90GzkJLQNQjcfLn2yhUA=="
+				/>
 			</Head>{" "}
-			<div className="container">
+			<div className="container" id="postB">
 				<div className="post_page">
 					<div className="post_content">
 						<div className="post_heading">
@@ -76,11 +81,45 @@ export default function Home() {
 								</span>
 							</div>
 							<div className="post_meta_item">
-								<a href="#">
-									<FiFacebook />
+								<a
+									href="Instagram.com/thebagheli"
+									target="_blank"
+								>
+									<img
+										src="https://cdn4.iconfinder.com/data/icons/social-media-logos-6/512/62-instagram-512.png"
+										alt="Instagram"
+										style={{ width: 22, height: 22 }}
+									/>
 								</a>
-								<a href="#">
-									<FiTwitter />
+								<a
+									href="https://Twitter.com/TheBagheli"
+									target="_blank"
+								>
+									<img
+										src="https://zeevector.com/wp-content/uploads/New-Twitter-Square-logo-PNG-Vector.png"
+										alt="Instagram"
+										style={{ width: 22, height: 22 }}
+									/>
+								</a>
+								<a
+									href=" https://Facebook.com/Baghelinews"
+									target="_blank"
+								>
+									<img
+										src="https://upload.wikimedia.org/wikipedia/commons/6/6c/Facebook_Logo_2023.png"
+										alt="Instagram"
+										style={{ width: 22, height: 22 }}
+									/>
+								</a>
+								<a
+									href="https://WhatsApp.com/thebagheli"
+									target="_blank"
+								>
+									<img
+										src="https://upload.wikimedia.org/wikipedia/commons/5/5e/WhatsApp_icon.png"
+										alt="Instagram"
+										style={{ width: 22, height: 22 }}
+									/>
 								</a>
 							</div>
 						</div>
