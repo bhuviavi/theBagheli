@@ -15,12 +15,15 @@ import axios from "axios";
 import useSWR from "swr";
 import { type } from "os";
 import LoadingPulse from "@/Components/LoadingPulse";
+import { useState } from "react";
+
 const fetcher = (url: string) => axios.get(url).then((res) => res.data);
 
 export default function Home() {
 	const pathname = usePathname();
 	const postSlug = pathname.split("/")[2];
 	const categorySlug = pathname.split("/")[1];
+	const [whatsappShare, setWhatsappShare] = useState("");
 
 	const { data, error, isLoading } = useSWR(
 		apiService.API_URL + "posts?slug=" + postSlug,
@@ -29,6 +32,14 @@ export default function Home() {
 
 	if (!isLoading) {
 		console.log(data);
+		if (whatsappShare == "") {
+			setWhatsappShare(
+				data[0].title.rendered +
+					" " +
+					"https://www.thebagheli.com" +
+					pathname
+			);
+		}
 	}
 
 	useEffect(() => {
@@ -39,7 +50,6 @@ export default function Home() {
 		document.head.appendChild(s);
 	}, [pathname]);
 
-	
 	return (
 		<>
 			<Head>
@@ -114,7 +124,10 @@ export default function Home() {
 									/>
 								</a>
 								<a
-									href="https://WhatsApp.com/thebagheli"
+									href={
+										"https://api.whatsapp.com/send?text=" +
+										whatsappShare
+									}
 									target="_blank"
 								>
 									<img
