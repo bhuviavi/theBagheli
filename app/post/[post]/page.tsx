@@ -38,6 +38,8 @@ export default function Home() {
 		s.setAttribute("async", "true");
 		document.head.appendChild(s);
 	}, [pathname]);
+
+	
 	return (
 		<>
 			<Head>
